@@ -1,11 +1,10 @@
 @using Bakery.Models;
 
-<h1>SHOW ORDER Details</h1>
+<h1>@Model["vendor"].VendorName Order Details for @Model["order"].OrderDate</h1>
+<h1>@Model["order"].OrderTitle</h1>
+<h1>@Model["order"].OrderDescription</h1>
+<h1>$@Model["order"].OrderPrice</h1>
 
 
-<h2>@Model["order"].OrderDescription</h2>
-<h3>Vendor: @Model["vendor"].VendorName</h3>
-
-
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendors'>View all vendors</a>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a></p>
+<p><a href='/vendors'>View all vendors</a></p>
