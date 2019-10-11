@@ -1,6 +1,15 @@
-<h1>@Model.VendorName Details: </h1>
+<h2>Description: @Model.VendorDescription</h2>
+<h1>@Model.VendorName Order Details: </h1>
 
-<h2>@Model.VendorDescription</h2>
 
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+}
+</ol>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
 <a href='/vendors/new'>Add another Vendor</a>
 <a href='/vendors'>View all vendors</a>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>

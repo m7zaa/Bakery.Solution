@@ -8,6 +8,13 @@ namespace Bakery.Controllers
     public class VendorsController : Controller
     {
 
+    [HttpGet("/vendors")]
+    public ActionResult Index()
+    {
+        List<Vendor> allVendors = Vendor.GetAll();
+        return View(allVendors);
+    }
+    
     [HttpGet("/vendors/new")]
     public ActionResult New()
     {
@@ -21,12 +28,6 @@ namespace Bakery.Controllers
         return RedirectToAction("Index");
     }
 
-    [HttpGet("/vendors")]
-    public ActionResult Index()
-    {
-        List<Vendor> allVendors = Vendor.GetAll();
-        return View(allVendors);
-    }
     
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
@@ -38,13 +39,25 @@ namespace Bakery.Controllers
         model.Add("vendor", selectedVendor);
         model.Add("orders", vendorOrders);
         return View(model);
+        // Vendor foundVendor = Vendor.Find(id);
+        // return View(foundVendor);
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderDescription)
+    {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Vendor foundVendor = Vendor.Find(vendorId);
+        Order newOrder = new Order(orderDescription);
+        foundVendor.AddOrder(newOrder);
+        List<Order> vendorOrders = foundVendor.Orders;
+        model.Add("orders", vendorOrders);
+        model.Add("vendor", foundVendor);
+        return View("Show", model);
+    }
 
 
 
 
-
-            // Vendor foundVendor = Vendor.Find(id);
-            // return View(foundVendor);
-        }
     }
 }
