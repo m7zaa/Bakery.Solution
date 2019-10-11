@@ -5,15 +5,15 @@ namespace Bakery.Models
 {
     public class Order
     {
-        public string Description { get; set; }
+        public string OrderDescription { get; set; }
         public int Id { get; }
         public List<Order> Orders { get; set; }
         public static List<Order> OrderList = new List<Order> { };
 
 
-        public Order(string description)
+        public Order(string orderDescription)
         {
-            Description = description;
+            OrderDescription = orderDescription;
             Id = OrderList.Count;
             OrderList = new List<Order>{};
 
