@@ -1,6 +1,9 @@
 @using Bakery.Models;
 
-<h1>Order Details: </h1>
+<h3>Vendor: @Model["vendor"].VendorName</h3>
+<h4>Vendor Description: @Model["vendor"].VendorDescription</h4>
+
+<h4>Orders: </h4>
 
 
 <ol>
@@ -11,6 +14,5 @@
 </ol>
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-<a href='/vendors/new'>Add another Vendor</a>
-<br>
-<a href='/vendors'>View all vendors</a>
+<p><a href='/vendors/new'>Add another Vendor</a></p>
+<p><a href='/vendors'>View all vendors</a></p>
