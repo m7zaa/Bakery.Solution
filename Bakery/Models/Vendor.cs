@@ -9,8 +9,6 @@ namespace Bakery.Models
         public string VendorDescription { get; set; }
         public int Id { get; }
         public List<Order> Orders { get; set; }
-
-
         public static List<Vendor> VendorList = new List<Vendor> { };
 
         public Vendor(string vendorName, string vendorDescription)
@@ -26,7 +24,6 @@ namespace Bakery.Models
         {
             return VendorList;
         }
-
 
         public static Vendor Find(int searchId)
         {
