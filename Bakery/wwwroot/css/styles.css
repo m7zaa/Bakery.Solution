@@ -7,6 +7,18 @@ body {
     font-family: 'Pacifico', cursive;
 }
 .container {
-    margin: 40px;
+    margin-left: 100px;
+    margin-top: 40px;
     font-family: 'IBM Plex Sans', sans-serif;
+}
+li {
+    font-size: 20px;
+}
+p {
+    font-size: 15px;
+}
+
+h3 {
+    font-weight: 60px;
+    margin-bottom: 20px;
 }
