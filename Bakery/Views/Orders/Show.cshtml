@@ -1,9 +1,9 @@
 @using Bakery.Models;
 
-<h1>@Model["vendor"].VendorName Order Details for @Model["order"].OrderDate</h1>
-<h1>@Model["order"].OrderTitle</h1>
-<h1>@Model["order"].OrderDescription</h1>
-<h1>$@Model["order"].OrderPrice</h1>
+<h3>@Model["vendor"].VendorName Order Details for @Model["order"].OrderDate</h3>
+<h3>@Model["order"].OrderTitle</h3>
+<h3>@Model["order"].OrderDescription</h3>
+<h3>$@Model["order"].OrderPrice</h3>
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a></p>
 <p><a href='/vendors'>View all vendors</a></p>
