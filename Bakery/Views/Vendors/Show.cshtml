@@ -1,16 +1,29 @@
 @using Bakery.Models;
 
-<h3>Vendor: @Model["vendor"].VendorName</h3>
-<h4>Vendor Description: @Model["vendor"].VendorDescription</h4>
-<h4>Orders: </h4>
+<!DOCTYPE html>
+    <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link rel="stylesheet" type="text/css" media="screen" href="~/css/styles.css">
+        <title>@Model["vendor"].VendorName's Order Details</title>
+    </head>
+    <body>
+        <div class = "container">
+            <h3>Vendor: @Model["vendor"].VendorName</h3>
+            <h4>Vendor Description: @Model["vendor"].VendorDescription</h4>
+            <h4>Orders: </h4>
 
-<ol>
-@foreach (Order order in @Model["orders"])
-{
-  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderDate, @order.OrderTitle</a></li>
-}
-</ol>
+            <ol>
+            @foreach (Order order in @Model["orders"])
+            {
+            <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderDate, @order.OrderTitle</a></li>
+            }
+            </ol>
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-<p><a href='/vendors/new'>Add another Vendor</a></p>
-<p><a href='/vendors'>View all vendors</a></p>
+            <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+            <p><a href='/vendors/new'>Add another Vendor</a></p>
+            <p><a href='/vendors'>View all vendors</a></p>
+
+
+        </div>
+    </body>
+</html>
