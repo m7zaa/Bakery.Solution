@@ -1,8 +1,12 @@
+body {
+    background-image: url("../img/background.jpeg");
+    background-size: cover;
+}    
 
-.container {
-    color: red;
- 
+#welcome {
+    font-family: 'Pacifico', cursive;
 }
-/* h1 {
-    color: red;
-} */
+.container {
+    margin: 40px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
