@@ -13,12 +13,14 @@ namespace Bakery.Controllers
     {
         return View();
     }
+
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDescription)
     {
         Vendor newVendor = new Vendor(vendorName, vendorDescription);
         return RedirectToAction("Index");
     }
+
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
@@ -26,8 +28,7 @@ namespace Bakery.Controllers
         return View(allVendors);
     }
     
-    [HttpPost("/vendors/{id}")]
-   
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
         Vendor foundVendor = Vendor.Find(id);
